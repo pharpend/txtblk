@@ -17,5 +17,7 @@ module Main where
 import System.Environment
 import Text.Censor  
 
+-- |This is the main function. It just pipes each of the arguments to
+-- the checker function. Extremely simple.
 main :: IO ()
 main = getArgs >>= (print . check . unwords)
