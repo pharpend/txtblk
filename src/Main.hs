@@ -14,5 +14,8 @@ use in other contexts, such as an Andorid app or irssi extension.
 
 module Main where
 
+import System.Environment
+import Text.Censor  
+
 main :: IO ()
-main = return ()
+main = getArgs >>= (print . check . unwords)
