@@ -79,6 +79,10 @@ badWords = ["anus", "arse", "arsehole", "ass", "assbag", "assbandit",
             "whoreface", "wop"
            ]
          
--- |Check if one of the bad words is in the list         
-check :: String -> [String]
-check = filter (`elem` badWords) . words
+-- |Check if one of the bad words is in the list, return the bad words.
+getBadWords :: String -> [String]
+getBadWords = filter (`elem` badWords) . words
+
+-- |Check is one of the bad words is in the list, return a boolean.
+check :: String -> Bool              
+check = ([] /=) . getBadWords
